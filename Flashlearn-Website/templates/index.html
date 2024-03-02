@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1S4TXTJPKD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-1S4TXTJPKD');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashLearn Homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;1,100;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/index_styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icons/' + 'favicon.ico') }}" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 150px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 100px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a i {
+            margin-right: 10px;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        .sidenav .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 2;
+            color: white;
+        }
+
+        .sidenav.collapsed {
+            width: 0;
+        }
+
+        .hero {
+            margin-left: 60px;
+            padding: 15px;
+            transition: margin-left 0.5s;
+        }
+
+        .hero-content {
+            text-align: center;
+            margin-top: 50px;
+            margin-right: 50px
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+
+
+<body>
+
+    <div class="sidenav" id="mySidenav">
+        <div class="menu-icon" onclick="toggleNav()">&#9776;</div>
+        <a href="#" aria-label="About"><i class="fas fa-info-circle"></i><b>About</b></a>
+        <a href="#" aria-label="Contact"><i class="fas fa-envelope"></i><b>Contact</b></a>
+        
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+        <a href="{{ url_for('genres_page') }}" class="hero-btn"><b>Start your journey</b></a>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function toggleNav() {
+                var sidenav = document.getElementById("mySidenav");
+                var hero = document.querySelector(".hero");
+
+                if (sidenav.className === "sidenav") {
+                    sidenav.className += " collapsed";
+                    hero.style.marginLeft = "0";
+                } else {
+                    sidenav.className = "sidenav";
+                    hero.style.marginLeft = "60px";
+                }
+            }
+
+            document.querySelector(".menu-icon").addEventListener("click", toggleNav);
+        });
+    </script>
+
+</body>
+
+</html>

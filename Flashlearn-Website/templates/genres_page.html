@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1S4TXTJPKD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-1S4TXTJPKD');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/forgenre.css') }}">
+    <title>Select Genre</title>
+</head>
+<body>
+    <div class="title-container">
+        <h1>SELECT GENRE</h1>
+    </div>
+    <div class="container">
+        <div class="circle-box comedy">
+            <img src="{{ url_for('static', filename='backgrounds/earth_comedy.png') }}" alt="comedy">
+            <p>Comedy</p>
+        </div>
+        <div class="circle-box fictional">
+            <a href="{{ url_for('grades_page') }}">
+                <img src="{{ url_for('static', filename='backgrounds/fictional_mons.jpg') }}" alt="fictional">
+                <p>Fictional</p>
+            </a>
+        </div>
+        
+        <div class="circle-box feel-good">
+            <img src="{{ url_for('static', filename='backgrounds/feel_good.gif') }}" alt="feel goood">
+            <p>Feel Good</p>
+        </div>
+        <div class="circle-box adventure">
+            <img src="{{ url_for('static', filename='backgrounds/adventure.gif') }}" alt="adventure">
+            <p>Adventure</p>
+        </div>
+    </div>
+</body>
+</html>

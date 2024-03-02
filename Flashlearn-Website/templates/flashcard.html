@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1S4TXTJPKD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1S4TXTJPKD');
+</script>
+    <meta charset="UTF-8">
+    <title>Flashcards</title>
+    <!-- Your CSS and other meta tags -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/flashcard_styles.css') }}">
+</head>
+<body>
+    <form>
+
+
+        {% for i in range(data.num_sentences) %}
+        <div class="center-container">
+            <div class="flashcard-container">
+                <div class="image-container">
+                    <!-- Display images for the current sentence -->
+                    {% for j in range(i * 2, (i * 2) + 2) %}
+                        <div>
+                            <img src="{{ url_for('static', filename='images/' + data.images_downloaded[j]) }}" alt="{{ data.images_downloaded[j] }}">
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- Display the input text for the current sentence -->
+                <div class="input-text medium-text">{{ data.input_texts[i] }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </form>
+</body>
+</html>
