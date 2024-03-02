@@ -21,39 +21,12 @@ Ensure you have API keys for Unsplash and Pixabay APIs. Replace `UNSPLASH_API_KE
 
 ## Installation
 
-1. Install the required Python packages:
-
-```bash
-pip install flask spacy requests
-
-## Download the English language model for Spacy
-
-```bash
-python -m spacy download en_core_web_sm
-
+1. Install the required Python packages
+2. Download the English language model for Spacy
 ## Usage
 Run the Flask application
-'''bash
 
-python app.py
-Access the application in your web browser
-text
-Copy code
+## Access the application in your web browser
 http://127.0.0.1:3000/
+
 Enter a paragraph or sentences into the input field and submit. The application will generate flashcards with images related to the nouns in the sentences.
-
-Docker Usage
-Build the Docker container
-bash
-Copy code
-docker build -t flashlearn-app .
-Run the Docker container
-bash
-Copy code
-docker run -p 3000:3000 flashlearn-app
-Access the application in your web browser at http://127.0.0.1:3000/.
-
-Files
-app.py: Flask application code.
-templates/index.html: HTML template for the web page.
-static/: Folder for storing downloaded images.
