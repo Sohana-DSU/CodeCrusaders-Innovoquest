@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="1.603" timestamp="2023-10-18T19:00:47.949381" hostname="PurpleDash"><testcase classname="tests.test_app" name="test_index_route" time="0.008" /></testsuite></testsuites>
