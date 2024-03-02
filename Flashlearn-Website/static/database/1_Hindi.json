@@ -1,0 +1,13 @@
+{
+  "num_sentences": 2,
+  "images_downloaded": [
+    "time_1.jpg",
+    "kingdom_1.jpg",
+    "microorganism_1.jpg",
+    "pseudopodia_1.jpg"
+  ],
+  "input_texts": [
+    "Once upon a time in a microscopic kingdom called Microterra, there lived a tiny and lively creature named Amara the Amoeba.",
+    "Amara was no ordinary microorganism; she possessed magical pseudopodia that allowed her to explore the vast world of her microscopic realm."
+  ]
+}
