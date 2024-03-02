@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('../backgrounds/forgenresback.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.title-container {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.circle-box {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 15px;
+    display: inline-block;
+    position: relative;
+    box-shadow: 0 0 20px rgba(3, 220, 64, 0.8);
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.circle-box:hover {
+    box-shadow: 0 0 60px rgb(240, 5, 5);
+}
+
+.circle-box.selected {
+    border: 4px solid yellow; /* Highlight selected genre with a border */
+}
+
+.circle-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.circle-box p {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    margin: 0;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.comedy {
+    background: rgba(255, 0, 0, 0.7);
+}
+
+.fictional {
+    background: rgba(0, 0, 255, 0.7);
+}
+
+.feel-good {
+    background: rgba(255, 255, 0, 0.7);
+}
+
+.adventure {
+    background: rgba(0, 255, 0, 0.7);
+}
