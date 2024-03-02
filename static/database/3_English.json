@@ -1,0 +1,13 @@
+{
+  "num_sentences": 2,
+  "images_downloaded": [
+    "mysterious_1.jpg",
+    "found_1.jpg",
+    "adventure_1.jpg",
+    "challenges_1.jpg"
+  ],
+  "input_texts": [
+    "Tom, the brave squirrel, found a mysterious map hidden in the forest.",
+    "With his friends, Lily the rabbit and Max the bluebird, they embarked on an epic adventure to uncover the treasure before sunset, overcoming daring challenges and discovering the true meaning of friendship along the way."
+  ]
+}

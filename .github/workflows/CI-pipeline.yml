@@ -1,0 +1,36 @@
+name: CI pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions: write-all
+
+jobs:
+           
+  push-dev-to-test-repo:
+   
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        repository: 'Product-Development-CodeCrusaders/Test-FlashLearn'
+        ref: main-test
+        token: ${{ secrets.CLA_WRITE_ACCESS }}
+
+    - name: Add dev repo and pull to test repo
+      run: |
+        
+        git remote add dev https://github.com/Product-Development-CodeCrusaders/Dev-FlashLearn
+        git remote -v
+        git branch -a
+        git config user.name Niharika-R5
+        git config user.email eng21ct0028@dsu.edu.in
+        
+        git pull dev main
+        #We use pull here to pull to the local system but when we need to push it to the remote repo ,we use push
+        #hence pull and push is used here
+        git push 
+      

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1S4TXTJPKD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1S4TXTJPKD');
+  </script>
+  <meta charset="UTF-8">
+  <title>Subjects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/subjects_styles.css') }}">
+</head>
+<body>
+  <h1 class="title" id="subjects">Subjects</h1>
+  <div class="subjects">
+    <div class="row">
+      <span class="subject" data-subject="English">English</span>
+      <span class="subject" data-subject="Maths">Maths</span>
+      <span class="subject" data-subject="Hindi">Hindi</span>
+      <span class="subject" data-subject="Urdu">Urdu</span>
+    </div>
+    <div class="row">
+      <span class="subject" data-subject="Science">Science</span>
+      <span class="subject long one_line" data-subject="Social Science">&nbsp;Social Science</span>
+      <span class="subject" data-subject="Sanskrit">Sanskrit</span>
+    </div>
+    <div class="row">  
+      <span class="subject long two_line" data-subject="Environmental Studies">Environmental Studies</span>
+      <span class="subject long" data-subject="Health and Physical Education">Health and Physical Education</span>
+      <span class="subject" data-subject="ICT">ICT</span>
+    </div>
+  </div>
+  <script>
+    const gradeSubjects = {
+      '1': ['Hindi', 'English', 'Maths', 'Urdu'],
+      '2': ['Hindi', 'English', 'Maths', 'Urdu'],
+      '3': ['Hindi', 'English', 'Maths', 'Urdu', 'Environmental Studies'],
+      '4': ['Hindi', 'English', 'Maths', 'Urdu', 'Environmental Studies'],
+      '5': ['Hindi', 'English', 'Maths', 'Urdu', 'Environmental Studies'],
+      '6': ['Hindi', 'English', 'Maths', 'Urdu', 'Science', 'Social', 'Sanskrit'],
+      '7': ['Hindi', 'English', 'Maths', 'Urdu', 'Science', 'Social', 'Sanskrit'],
+      '8': ['Hindi', 'English', 'Maths', 'Urdu', 'Science', 'Social', 'Sanskrit'],
+      '9': ['Hindi', 'English', 'Maths', 'Urdu', 'Science', 'Social', 'Sanskrit', 'Health and Physical Education', 'ICT'],
+      '10': ['Hindi', 'English', 'Maths', 'Urdu', 'Science', 'Social', 'Sanskrit', 'Health and Physical Education', 'ICT'],
+    };
+
+    function showHideSubjects() {
+      const selectedGrade = localStorage.getItem('selectedGrade');
+      const subjectsToShow = document.querySelectorAll('.subject[data-subject]');
+
+      subjectsToShow.forEach(subject => {
+        const subjectGrade = subject.getAttribute('data-subject');
+
+        if (selectedGrade && gradeSubjects[selectedGrade]) {
+          if (!gradeSubjects[selectedGrade].includes(subjectGrade)) {
+            subject.style.display = 'none';
+          } else {
+            subject.style.display = 'block';
+          }
+        } else {
+          subject.style.display = 'none';
+        }
+      });
+    }
+
+    function selectSubject(subject) {
+      fetch('/select_subject', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `subject=${subject}`,
+      });
+    }
+
+    function redirectToFlashcards(subject) {
+      window.location.href = `/flashcard?subject=${subject}`;
+    }
+
+    document.querySelectorAll('.subject').forEach(subject => {
+      subject.addEventListener('click', function() {
+        const selectedSubject = subject.getAttribute('data-subject');
+        fetch(`/subjects/${selectedSubject}`, { method: 'POST' });
+        localStorage.setItem('selectedSubject', selectedSubject);
+        redirectToFlashcards(selectedSubject);
+      });
+    });
+
+    window.onload = showHideSubjects;
+  </script>
+</body>
+</html>

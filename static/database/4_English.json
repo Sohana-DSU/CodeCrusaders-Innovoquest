@@ -1,0 +1,15 @@
+{
+  "num_sentences": 1,
+<<<<<<< HEAD
+  "images_downloaded": [],
+  "input_texts": []
+=======
+  "images_downloaded": [
+    "street_1.jpg",
+    "cat_1.jpg"
+  ],
+  "input_texts": [
+    "A dog and cat walked down the street."
+  ]
+>>>>>>> aedfaee317609831d74227fc05dec84802232dd9
+}

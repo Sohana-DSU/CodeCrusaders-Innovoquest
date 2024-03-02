@@ -1,0 +1,38 @@
+.center-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 100% of the viewport height */
+    margin-top: -120px; /* Adjusted margin-top to -160px */
+}
+
+.flashcard-container {
+    border: 2px solid white; /* White border color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Add padding inside the border */
+    box-shadow: 20px 20px 40px rgba(128, 128, 128, 0.8), -20px -20px 40px rgba(255, 255, 255, 0.8); /* Increased shadows */
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center-align the images horizontally */
+}
+.image-container img {
+    margin: 10px; /* Increased margin between images */
+    width: 200px;
+}
+
+.input-text {
+    font-size: 24px;
+    text-align: center; /* Center-align the text */
+    text-transform: uppercase;
+    color: #006400;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 10px 0; /* Increased margin below the input text */
+}
+/* Define a CSS class for medium font size */
+.medium-text {
+    font-size: 24px; /* Medium font size */
+}
